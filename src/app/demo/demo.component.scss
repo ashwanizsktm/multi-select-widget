@@ -1,0 +1,71 @@
+//Function to convert px value into rem
+$base-size: 16;
+
+@function size($target, $context: $base-size) {
+  @return ($target / $context) * 1rem;
+}
+
+.data-set-wrap {
+  display        : flex;
+  margin         : size(10);
+  align-items    : center;
+  justify-content: center;
+}
+
+.data-set-container {
+  width: 50%;
+}
+
+.direction>span {
+  display: block;
+  height : 15px;
+}
+
+.select-btn,
+.clear-btn {
+  color           : #168DC7;
+  border          : none;
+  background-color: transparent;
+}
+
+.select-btn,
+.clear-btn:focus {
+  outline         : none;
+  border          : none;
+  background-color: transparent;
+}
+
+.data-set {
+  padding         : size(10);
+  margin          : size(5);
+  cursor          : pointer;
+  min-height      : 100px;
+  background-color: #F1F6FC;
+  border          : 1px solid #ccc;
+}
+
+.data-set-btn {
+  margin          : 4px;
+  background-color: #fff;
+  border          : none;
+}
+
+.data-set-btn:hover {
+  background-color: #168DC7;
+  color           : #fff;
+}
+
+.data-set-btn:focus {
+  border : none;
+  outline: none;
+}
+
+@media only screen and (max-width: 768.5px) {
+  .data-set-wrap {
+    flex-direction: column;
+  }
+
+  .data-set-container {
+    width: 100%;
+  }
+}

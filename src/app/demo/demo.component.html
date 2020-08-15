@@ -1,0 +1,42 @@
+<div class="data-set-wrap">
+
+  <div class="data-set-container">
+    <p>Available: 
+      <button class="select-btn"
+      (click)="sendAllData()">
+      Select All </button>
+    </p>
+      <div class="data-set">
+      <button class="data-set-btn"
+      *ngFor="let dataSet of initialData; index as id;"
+      (click)="sendData(id)"
+      >
+      {{dataSet}}
+     </button>
+    </div>
+  </div>
+
+  <div class="direction">
+    <span class="direction__right">
+      <img src="../../assets/right-arrow.png" alt="arrow">
+    </span>
+    <span class="direction__left">
+      <img src="../../assets/left-arrow.png" alt="arrow">
+    </span>
+  </div>
+
+  <div class="data-set-container" >
+    <p>Selected:
+      <button class="clear-btn"
+       (click)="clearAllData()" >
+      Clear All
+    </button>
+  </p>
+    <div class="data-set">
+      <button *ngFor="let data of finalData; index as id"
+       class="data-set-btn"
+       (click)="sendDataBack(id)"
+       >{{data}}</button>
+    </div>
+  </div>
+</div>
